@@ -2,7 +2,7 @@
 
 pragma solidity >=0.7.0 <0.9.0;
 
-import "hardhat/console.sol";
+import "../node_modules/hardhat/console.sol";
 
 contract PokemonFactoryRequire{
 
@@ -29,7 +29,7 @@ contract PokemonFactoryRequire{
   function createPokemon(uint _id, string memory _name) public{
     require(_id > 0, "Id must to be greater than zero");
     uint name_size = getStringLength(_name);
-    //console.log(name_size);
+    console.log(name_size);
     require(name_size > 0, "Name must not be empty");
     require(name_size > 2, "Name length must be greather than two");
     Pokemon memory p = Pokemon(_id, _name);
